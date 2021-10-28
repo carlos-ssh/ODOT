@@ -1,5 +1,5 @@
 import './style.css';
-import IsCompleted from './components/Status.js';
+import IsCompleted from './components/Status';
 
 let tasks = JSON.parse(localStorage.getItem('ToDo')) || [];
 
