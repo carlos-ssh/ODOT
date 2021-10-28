@@ -40,3 +40,56 @@ const addToTheList = () => {
 };
 addToTheList();
 
+const clearAllCompleted = () => {
+  const ul = document.getElementById('list');
+  const clearItems = document.getElementById('clear-items-completed');
+  clearItems.addEventListener('click', () => {
+    tasks = tasks.filter((task) => !task.completed);
+    ul.innerHTML = '';
+    displayItems();
+    IsCompleted.updateLocalStorage(tasks);
+  });
+};
+clearAllCompleted();
+
+const remove = () => {
+  window.addEventListener('click', (e) => {
+    const ul = document.getElementById('list');
+    if (e.target && e.target.className.includes('trash')) {
+      const id = parseInt(e.target.parentNode.id, 10);
+      tasks = tasks.filter((task) => task.index !== id);
+      ul.innerHTML = '';
+      displayItems();
+      IsCompleted.updateLocalStorage(tasks);
+    } else if (e.target && !e.target.className.includes('text')) {
+      const allLi = document.querySelector('#list').childNodes;
+      allLi.forEach((list) => {
+        const innerInput = list.querySelector('.text');
+
+        innerInput.parentNode.querySelector('.trash').className = 'fa fa-trash-o trash d-none';
+        innerInput.parentNode.querySelector('.open').classList.remove('d-none');
+        innerInput.parentNode.style.backgroundColor = '';
+        innerInput.style.backgroundColor = '';
+      });
+    }
+  });
+};
+
+remove();
+
+const editDesc = () => {
+  const ul = document.getElementById('list');
+  const inputs = document.querySelectorAll('.text');
+  inputs.forEach((input, index) => {
+    ul.addEventListener('keydown', (e) => {
+      const { value } = e.target;
+      if (e.target.className.includes(`text-${index}`) && e.key === 'Enter' && value !== '') {
+        tasks[index].description = value;
+        ul.innerHTML = '';
+        displayItems();
+        IsCompleted.updateLocalStorage(tasks);
+      }
+    });
+  });
+};
+editDesc();
