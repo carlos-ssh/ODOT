@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  color: #575757;
+}
+
+.text {
+  flex-basis: 90%;
+  margin-left: 10px;
+  font-size: 1rem;
+  border: none;
+  background-color: #fff;
+}
