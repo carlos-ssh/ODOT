@@ -14,9 +14,9 @@
 
 ### Setup
 
-- Clone the following repository: [todos](https://github.com/carlos-ssh/todos)
+- Clone the following repository: [todos](https://github.com/carlos-ssh/ODOT)
 
-Use `` git clone https://github.com/carlos-ssh/todos `` paste it on your terminal and in your selected directory.
+Use `` git clone https://github.com/carlos-ssh/ODOT `` paste it on your terminal and in your selected directory.
 
 
 ### Install
@@ -42,7 +42,7 @@ Use `` git clone https://github.com/carlos-ssh/todos `` paste it on your termina
 
 ## Authors
 
-👤 ** Carlos Flores **
+👤  **Carlos Flores**
 
 - GitHub: [@carlos-ssh](https://github.com/carlos-ssh)
 - Twitter: [@carlos-ssh](https://twitter.com/aom.robles)
